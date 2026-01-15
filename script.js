@@ -72,7 +72,14 @@ const displayMovie = async (url) => {
     content.innerHTML = ""
     displayMovie(updateURL)
 })
-    
+
+    const onPageChange = (p) =>{
+        page = p
+        let updateURL = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&year=${year}&page=${page}`
+        content.innerHTML = ""
+        displayMovie(updateURL)
+    }
+
 }   
 
 displayMovie(url)

@@ -53,7 +53,7 @@ const displayMovie = async (url) => {
         const poster = document .createElement('img')
         title.innerHTML = `${m.title.substring(0,19)}`
         poster.src = `${urlPoster}${m.poster_path}`
-        rate.innerHTML = `${m.vote_average}`
+        rate.innerHTML = m.vote_average.toFixed(1)
         circle.appendChild(rate)
         movieEl.appendChild(circle)
         movieEl.appendChild(title)

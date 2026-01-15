@@ -1,5 +1,310 @@
+/* ===== RESET ===== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Netflix Sans", "Segoe UI", Roboto, sans-serif;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+    
+}
+
+
+body {
+  background: #141414;
+  color: #fff;
+}
+
+/* ===== NAV ===== */
+#nav {
+  background: #141414;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#years {
+  background: #141414;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* ===== MOVIE GRID ===== */
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Netflix Sans", "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: #141414;
+  color: #fff;
+}
+
+/* ===== NAV ===== */
+#nav {
+  background: #141414;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#years {
+  background: #141414;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* ===== MOVIE GRID ===== */
+.movie-grid {
+  display: flex;
+  gap: 12px;
+  padding: 20px 40px 60px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ===== MOVIE CARD ===== */
+.superContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.35s ease, z-index 0.35s ease;
+  flex: 0 0 auto;
+  width: 160px;
+  margin: 10px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.55),
+    0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+.superContainer:hover {
+  transform: scale(1.25);
+  z-index: 10;
+}
+
+/* ===== POSTER ===== */
+.superContainer img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== DARK OVERLAY ===== */
+.superContainer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.superContainer:hover::after {
+  opacity: 1;
+}
+
+/* ===== TITLE ===== */
+.title {
+  position: absolute;
+  bottom: 14px;
+  left: 12px;
+  right: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.superContainer:hover .title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RATING ===== */
+.rateContainer {
+  position: absolute;
+  bottom: 14px;
+  right: 12px;
+  background: #e50914;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* ===== PAGINATION ===== */
+#pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 40px;
+}
+
+#pagination button {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+#pagination button:hover {
+  background: #e50914;
+  border-color: #e50914;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .movie-grid {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .superContainer img {
+    height: 200px;
+  }
+
+  .superContainer:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+/* ===== MOVIE CARD ===== */
+.superContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.35s ease, z-index 0.35s ease;
+}
+
+.superContainer:hover {
+  transform: scale(1.25);
+  z-index: 10;
+}
+
+/* ===== POSTER ===== */
+.superContainer img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== DARK OVERLAY ===== */
+.superContainer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.superContainer:hover::after {
+  opacity: 1;
+}
+
+/* ===== TITLE ===== */
+.title {
+  position: absolute;
+  bottom: 14px;
+  left: 12px;
+  right: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.superContainer:hover .title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RATING ===== */
+.rateContainer {
+  position: absolute;
+  bottom: 14px;
+  right: 12px;
+  background: #e50914;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* ===== PAGINATION ===== */
+#pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 40px;
+}
+
+#pagination button {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+#pagination button:hover {
+  background: #e50914;
+  border-color: #e50914;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .movie-grid {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .superContainer img {
+    height: 200px;
+  }
+
+  .superContainer:hover {
+    transform: scale(1.1);
+  }
 }
